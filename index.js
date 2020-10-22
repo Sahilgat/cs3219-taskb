@@ -1,5 +1,5 @@
 let express = require('express')
-let apiRoutes = require("./api-routes")
+let apiRoutes = require("./routes/contact")
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 
@@ -12,8 +12,16 @@ app.use(bodyParser.urlencoded({
  }));
 app.use(bodyParser.json());
 
+const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
+console.log('Current environment: ', env);
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/taskb', { useNewUrlParser: true, useUnifiedTopology: true});
+if (env === 'development') {
+    mongoose.connect('mongodb://localhost/taskb', { useNewUrlParser: true, useUnifiedTopology: true});
+} else if (env === 'test') {
+    mongoose.connect('mongodb://localhost/taskb_test', { useNewUrlParser: true, useUnifiedTopology: true});
+} else if (env === 'production') {
+    // To add
+}
 var db = mongoose.connection;
 
 // Check for DB connection
@@ -25,12 +33,17 @@ else
 // Setup server port
 var port = process.env.PORT || 8080;
 
-// Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express & Nodemon'));
+// when a random route is inputed
+app.get('/', (req, res) => res.status(200).send({
+    message: 'Welcome to the CS3219 Task B API.'
+ }));
 
 // Use Api routes in the App
 app.use('/api', apiRoutes)
 // Launch app to listen to specified port
-app.listen(port, function () {
+const server = app.listen(port, function () {
      console.log("Running on port " + port);
 });
+
+// Export for testing
+module.exports = server;
