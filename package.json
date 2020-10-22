@@ -1,0 +1,17 @@
+{
+  "name": "taskb",
+  "version": "1.0.0",
+  "description": "CS3219 task B",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sahil S/O Sanjeev Gathani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "nodemon": "^2.0.6"
+  }
+}
