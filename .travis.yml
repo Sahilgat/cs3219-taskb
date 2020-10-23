@@ -1,9 +1,12 @@
+dist: xenial
+language: node_js
+os: linux
 env:
   global:
     - CC_TEST_REPORTER_ID=d74956257e9f79cbce1b259a4a703e272de06a24e2b294dd44792efc4afbb999
-language: node_js
-node_js:
-  - "stable"
+jobs:
+  include:
+  - node_js: "stable"
 cache:
   directories:
     - "node_modules"
