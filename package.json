@@ -31,7 +31,6 @@
     "babel-loader": "^8.1.0",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.1.0",
     "mocha": "^2.4.5",
     "nyc": "^15.1.0"
