@@ -1,0 +1,4 @@
+[![Build Status](https://travis-ci.org/Sahilgat/cs3219-taskb.svg?branch=main)](https://travis-ci.org/Sahilgat/cs3219-taskb)
+[![Coverage Status](https://coveralls.io/repos/github/Sahilgat/cs3219-taskb/badge.svg?branch=main)](https://coveralls.io/github/Sahilgat/cs3219-taskb?branch=main)
+[![Maintainability](https://api.codeclimate.com/v1/badges/021827ade890999b72a3/maintainability)](https://codeclimate.com/github/Sahilgat/cs3219-taskb/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/021827ade890999b72a3/test_coverage)](https://codeclimate.com/github/Sahilgat/cs3219-taskb/test_coverage)

@@ -1,4 +1,4 @@
-Contact = require('../models/contact');
+let Contact = require('../models/contact');
 
 // Handle index actions
 exports.index = function (req, res) {

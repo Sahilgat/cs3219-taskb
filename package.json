@@ -4,8 +4,9 @@
   "description": "CS3219 task B",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "mocha",
+    "start": "nodemon --exec babel-node index.js",
+    "test": "nyc --require @babel/register  mocha ./test/contact.js --timeout 20000 --exit",
+    "build": "rm -rf ./build && babel -d ./build ./api -s",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
@@ -20,11 +21,19 @@
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "@babel/runtime": "^7.12.1",
+    "babel-loader": "^8.1.0",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5",
     "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.1.0",
+    "mocha": "^2.4.5",
     "nyc": "^15.1.0"
   }
 }
