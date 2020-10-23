@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 // Setup schema
-var contactScheme = mongoose.Schema({
+var contactSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -19,7 +19,7 @@ var contactScheme = mongoose.Schema({
 });
 
 // Export Contact model
-var Contact = module.exports = mongoose.model('contact', contactScheme);
+var Contact = module.exports = mongoose.model('contact', contactSchema);
 
 module.exports.get = function (callback, limit) {
     Contact.find(callback).limit(limit);
